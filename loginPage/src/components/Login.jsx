@@ -9,21 +9,21 @@ function Login(){
         <form>
           <div className="mb-4">
             <input
-              type="email"
+              type="email" //EMAIL
               name="user_name"
               placeholder="Email"
-              className=" border-gray-500 w-full px-3 py-2 border rounded-lg bg-gray 
-                          focus:border-blue-500 dark:text-black"
+              className=" border-gray-500 w-1/2 px-3 py-2 border rounded-lg bg-gray 
+                          focus:border-blue-500 dark:text-black text-center"
               required
             ></input>
           </div>
           <div className="mb-4">
             <input
-              type="password"
+              type="password" //PASSWORD
               name="user_email"
               placeholder="Password"
               className=" border-gray-500 w-full px-3 py-2 border rounded-lg bg-gray 
-                          focus:border-blue-500 dark:text-black"
+                          focus:border-blue-500 dark:text-black text-center"
               required
             ></input>
           </div>

@@ -8,7 +8,7 @@ function App() {
     <div className="h-full">
       <Logo>
       </Logo>
-      <div>
+      <div className="">
         <Login>
         </Login>
       </div>

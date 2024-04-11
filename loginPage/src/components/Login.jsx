@@ -35,7 +35,7 @@ function Login(){
             <button
               type="submit"
               value="Send"
-              className=" px-3 py-2 rounded-2xl font-semibold text-white transition-all duration-500 bg-gradient-to-br to-teal-500 via-cyan-600 from-teal-500 bg-size-200 bg-pos-0 hover:bg-pos-100"
+              className=" px-3 py-2 rounded-2xl font-semibold text-white transition-all duration-500 bg-gradient-to-br to-cyan-600 via-cyan-800 from-teal-600 bg-size-200 bg-pos-0 hover:bg-pos-100"
             >
               Submit
             </button>

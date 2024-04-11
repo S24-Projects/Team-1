@@ -12,8 +12,8 @@ function Login(){
               type="email" //EMAIL
               name="user_email"
               placeholder="Email"
-              className=" w-1/2 px-3 py-3 border rounded-xl bg-gray
-                          focus:border-blue-500 dark:text-black font-semibold "
+              className=" transition-all duration-500 w-1/2 px-3 py-3 border-2 border-teal-800 rounded-xl bg-transparent backdrop-blur-lg
+                          focus:bg-teal-950 dark:text-black font-semibold "
               required
             ></input>
           </div>
@@ -22,8 +22,8 @@ function Login(){
               type="password" //PASSWORD
               name="user_password"
               placeholder="Password"
-              className="   w-1/2 px-3 py-3 border rounded-xl bg-gray 
-                          focus:border-blue-500 dark:text-black font-semibold"
+              className="transition-all duration-500 w-1/2 px-3 py-3 border-2 border-teal-800 rounded-xl bg-transparent backdrop-blur-lg 
+                          focus:bg-teal-950 dark:text-black font-semibold"
               required
             ></input>
           </div>

@@ -5,13 +5,16 @@ import './index.css'
 function App() {
 
   return (
-    <div className="h-full">
+    <div className=" text-white">
+      <div className=" w-2/5 backdrop-blur-lg border-r-4">
       <Logo>
       </Logo>
-      <div className="">
+      <div className=" h-screen flex justify-start items-center">
         <Login>
         </Login>
       </div>
+      </div>
+      
     </div>
   )
 }

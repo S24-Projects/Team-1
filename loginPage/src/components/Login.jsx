@@ -13,7 +13,7 @@ function Login(){
               name="user_email"
               placeholder="Email"
               className=" transition-all duration-500 w-1/2 px-3 py-3 border-2 border-teal-800 rounded-xl bg-transparent backdrop-blur-lg
-                          focus:bg-teal-950 dark:text-black font-semibold "
+                          focus:bg-teal-950 font-semibold "
               required
             ></input>
           </div>
@@ -23,7 +23,7 @@ function Login(){
               name="user_password"
               placeholder="Password"
               className="transition-all duration-500 w-1/2 px-3 py-3 border-2 border-teal-800 rounded-xl bg-transparent backdrop-blur-lg 
-                          focus:bg-teal-950 dark:text-black font-semibold"
+                          focus:bg-teal-950 font-semibold"
               required
             ></input>
           </div>

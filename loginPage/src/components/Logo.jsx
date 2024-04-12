@@ -3,8 +3,8 @@ function Logo() {
     return (
       <a href ="">
       <div className="flex p-5">
-          <img className=" w-20 rounded-lg" src = "./src/assets/Fintech Logo.png"></img>
-          <h1 className=" font-semibold p-2 text-xl">
+          <img className=" shadow-2xl w-20 rounded-lg" src = "./src/assets/Fintech Logo.png"></img>
+          <h1 className="shadow-2xl font-semibold p-2 text-xl">
             Fintech
             <br/>
             Robo Advisor

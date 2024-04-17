@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
-
+import App from './App.jsx';
+import SignupPage from './pages/signupPage.jsx';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Signup from './pages/Signup.jsx';
+import SignupPage from './pages/signupPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -17,10 +17,11 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "signup",
-    element: <Signup/>,
+    path: "pageSignup",
+    element: <SignupPage/>,
   },
 ]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

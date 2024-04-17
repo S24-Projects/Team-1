@@ -1,7 +1,8 @@
+import Logo from "../components/Logo";
 import Signup from "../components/Signup";
-import React from "react";
+import '../index.css'
 
-function Signup() {
+function SignupPage() {
   return (
     <div className=" text-white">
       <div className=" w-2/5 backdrop-blur-lg border-r-4">
@@ -11,7 +12,7 @@ function Signup() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Signup;
+export default SignupPage

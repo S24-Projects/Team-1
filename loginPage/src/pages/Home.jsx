@@ -4,7 +4,7 @@ import React from 'react'
 function Home() {
   return (
     <>
-    <Logo ></Logo>
+    <Logo></Logo>
     <div className='h-screen flex justify-center text-white text-5xl p-5'>
       <div className=''>
         <h1 className=''>Welcome to the Homepage</h1>

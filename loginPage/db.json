@@ -6,34 +6,6 @@
       "lastName": "Haque",
       "email": "a@gmail.com",
       "password": "abc"
-    },
-    {
-      "id": "916b",
-      "firstName": "Saathvik",
-      "lastName": "kummala",
-      "email": "q@gmail.com",
-      "password": "a"
-    },
-    {
-      "id": "d64f",
-      "firstName": "Muhd",
-      "lastName": "Haque",
-      "email": "muhd.ayman.haque@gmail.com",
-      "password": "asf"
-    },
-    {
-      "id": "796e",
-      "firstName": "Muhd",
-      "lastName": "Haque",
-      "email": "q@gmail.com",
-      "password": "a"
-    },
-    {
-      "id": "faa4",
-      "firstName": "Muhd",
-      "lastName": "Haque",
-      "email": "asf@adf.c",
-      "password": "a"
     }
   ]
 }

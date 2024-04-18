@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom"
+
 function Logo() {
 
     return (
-      <a href ="">
+      <Link to ="/">
       <div className="flex p-5">
           <img className="w-20 rounded-lg" src = "./src/assets/Fintech Logo.png"></img>
           <h1 className="font-semibold p-2 text-xl">
@@ -10,7 +12,7 @@ function Logo() {
             Robo Advisor
           </h1>
       </div>
-      </a>
+      </Link>
     )
   }
   

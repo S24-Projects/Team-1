@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 function Login(){
     return(
         <div className="max-w-md w-full">
@@ -41,7 +42,7 @@ function Login(){
             </button>
           </div>
             <p className="justify-center flex mb-1 font-semibold whitespace-pre">
-                Don't have an account ?<span className="">  <a href = "pageSignup" className="text-teal-400 hover:underline">Sign up</a> </span>
+                Don't have an account ?<span className="">  <Link to = "pageSignup" className="text-teal-400 hover:underline">Sign up</Link> </span>
             </p>
             <p className="justify-center flex mb-1 font-semibold whitespace-pre">
                 <span className="">  <a href = "" className="text-teal-400 hover:underline">Forgot you Password?</a> </span>

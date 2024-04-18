@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App.jsx';
+import 'react-toastify/ReactToastify.css'
+import { ToastContainer } from 'react-toastify';
 // import SignupPage from './pages/signupPage.jsx';
 
 import {
@@ -25,6 +27,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ToastContainer></ToastContainer>
     <RouterProvider router = {router}/>
   </React.StrictMode>,
 )

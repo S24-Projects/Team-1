@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import Alert from '@mui/material/Alert';
-import { ToastContainer, toast } from 'react-toastify';
+// import Alert from '@mui/material/Alert';
+import { toast } from 'react-toastify';
 
 function Signup(){
 
@@ -9,6 +10,8 @@ function Signup(){
   const [lastName,lastNameChange] = useState("");
   const [email,emailChange] = useState("");
   const [password,passwordChange] = useState("");
+
+  const navigate = useNavigate();
 
   const handlesubmit = (e) => {
     e.preventDefault();
@@ -21,6 +24,7 @@ function Signup(){
       body:JSON.stringify(regobj)
     }).then((res)=>{
       toast.success('Worked successfully');
+      navigate('/')
       console.log("It WORKED")
     }).catch((err)=>{
       toast.warning('Did not work');

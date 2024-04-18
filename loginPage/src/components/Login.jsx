@@ -74,7 +74,7 @@ function Login(){
               value="Send"
               className=" px-3 py-2 rounded-2xl font-semibold text-white transition-all duration-500 bg-gradient-to-br to-cyan-600 via-cyan-800 from-teal-600 bg-size-200 bg-pos-0 hover:bg-pos-100"
               >
-              Log In
+              Continue
             </button>
           </div>
             <p className="justify-center flex mb-1 font-semibold whitespace-pre">

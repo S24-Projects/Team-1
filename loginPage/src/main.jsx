@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App.jsx';
+import Home from './pages/Home.jsx';
 import 'react-toastify/ReactToastify.css'
 import { ToastContainer } from 'react-toastify';
 // import SignupPage from './pages/signupPage.jsx';
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "pageSignup",
     element: <SignupPage/>,
+  },
+  {
+    path: "testHome",
+    element: <Home/>,
   },
 ]);
 

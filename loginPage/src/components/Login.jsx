@@ -13,21 +13,19 @@ function Login(){
 
       if(validate)
       {
-        fetch("http://localhost:3000/user/" + email).then((res) => {
-          console.log(res.json());
+        fetch("http://localhost:3000/user/?email=" + email).then((res) => {
           return res.json();
         }).then((resp) => {
           if(Object.keys(resp).length === 0) {
-            toast.error('Please Enter a Valid Username');
+            toast.error('Please Enter a Valid Email');
           } else {
-            if (resp.password === password) {
-                usenavigate('/')
+            if (resp[0].password === password) {
+                usenavigate('/TestHome')
             } else {
+              console.log(resp[0].password)
               toast.error('Please enter Valid Credentials')
             }
           }
-        }).catch((err) => {
-          toast.error("Something went wrong");
         })
       }
     }
@@ -95,3 +93,6 @@ export default Login
 // text-lg bg-teal-600 dark:text-white 
 //                           rounded-2xl text-white px-3 py-2 font-semibold hover:bg-gradient-to-r from-teal-500 to-teal-700 duration-500
 //                           hover:text-xl focus:outline-red-500
+
+
+//Object.keys(res).length === 0

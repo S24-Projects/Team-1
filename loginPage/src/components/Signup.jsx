@@ -21,13 +21,12 @@ function Signup(){
     fetch("http://localhost:3000/user",{
       method: "POST",
       headers:{'content-type':'application/json'},
-      body:JSON.stringify(regobj)
+      body:JSON.stringify(regobj),
     }).then((res)=>{
-      toast.success('Worked successfully');
+      toast.success('Account Created');
       navigate('/')
-      console.log("It WORKED")
     }).catch((err)=>{
-      toast.warning('Did not work');
+      toast.warning('Error Occured');
     });
 
   }

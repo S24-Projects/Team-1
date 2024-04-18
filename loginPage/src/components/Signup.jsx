@@ -18,16 +18,27 @@ function Signup(){
     let regobj = {firstName,lastName,email,password};
     console.log(regobj);
 
-    fetch("http://localhost:3000/user",{
-      method: "POST",
-      headers:{'content-type':'application/json'},
-      body:JSON.stringify(regobj),
-    }).then((res)=>{
-      toast.success('Account Created');
-      navigate('/')
-    }).catch((err)=>{
-      toast.warning('Error Occured');
-    });
+    fetch("http://localhost:3000/user/?email=" + email).then((res) => {
+          return res.json();
+        }).then((resp) => {
+          if(Object.keys(resp).length != 0) {
+            toast.error('Email Already in Use');
+          }
+          else{
+            fetch("http://localhost:3000/user",{
+            method: "POST",
+            headers:{'content-type':'application/json'},
+            body:JSON.stringify(regobj),
+          }).then((res)=>{
+            toast.success('Account Created');
+            navigate('/')
+          }).catch((err)=>{
+            toast.warning('Error Occured');
+          });
+          }
+        })
+
+    
 
   }
     return(

@@ -1,7 +1,14 @@
 {
   "user": [
     {
-      
+      "id": "7dd7"
+    },
+    {
+      "id": "9b7c",
+      "firstName": "Ayman",
+      "lastName": "Haque",
+      "email": "sup@gmail.com",
+      "password": "sup"
     }
   ]
 }

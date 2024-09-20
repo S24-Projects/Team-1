@@ -9,6 +9,13 @@
       "lastName": "Haque",
       "email": "sup@gmail.com",
       "password": "sup"
+    },
+    {
+      "id": "d3c6",
+      "firstName": "newAcc",
+      "lastName": "Ount",
+      "email": "new@gmail.com",
+      "password": "new"
     }
   ]
 }

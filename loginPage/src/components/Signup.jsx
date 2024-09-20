@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 // import Alert from '@mui/material/Alert';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 function Signup(){
 
@@ -13,32 +14,57 @@ function Signup(){
 
   const navigate = useNavigate();
 
-  const handlesubmit = (e) => {
+  const handlesubmit = async (e) => {
     e.preventDefault();
     let regobj = {firstName,lastName,email,password};
     console.log(regobj);
 
-    fetch("http://localhost:3000/user/?email=" + email).then((res) => {
-          return res.json();
-        }).then((resp) => {
-          if(Object.keys(resp).length != 0) {
-            toast.error('Email Already in Use');
-          }
-          else{
-            fetch("http://localhost:3000/user",{
-            method: "POST",
-            headers:{'content-type':'application/json'},
-            body:JSON.stringify(regobj),
-          }).then((res)=>{
+    // fetch("http://localhost:3000/user/?email=" + email).then((res) => {
+    //       return res.json();
+    //     }).then((resp) => {
+    //       if(Object.keys(resp).length != 0) {
+    //         toast.error('Email Already in Use');
+    //       }
+    //       else{
+                // fetch("http://localhost:3000/user",{
+                //   method: "POST",
+                //   headers:{'content-type':'application/json'},
+                //   body:JSON.stringify(regobj),
+                // }).then((res)=>{
+                //   toast.success('Account Created');
+                //   navigate('/')
+                // }).catch((err)=>{
+                //   toast.warning('Error Occured');
+                // });
+    //       }
+    //     })
+
+
+//Start of harmoni test code
+        try {
+          const response = await axios.post("http://localhost:8000/signUp", regobj)
+            // method: "POST",
+            // headers: {
+            //   'Content-Type': 'application/json',
+            // },  
+            // body: JSON.stringify(regobj)
+
             toast.success('Account Created');
             navigate('/')
-          }).catch((err)=>{
-            toast.warning('Error Occured');
-          });
-          }
-        })
 
-    
+          // const data = await response.json();
+          // console.log("Data Message is: " + data.message)
+          
+        }
+        catch(error) {
+          if(error.response){
+            console.error('Signup error:', error.response.data.message);
+            toast.error(error.response.data.message);
+          }
+        }
+//End of harmoni test code
+
+
 
   }
     return(

@@ -2,37 +2,56 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom"
+import axios from 'axios';
 function Login(){
     const [email,emailUpdate] = useState('');
     const [password,passwordUpdate] = useState('');
 
     const usenavigate = useNavigate();
 
-    const proceedLogin = (e) => {
+    const proceedLogin = async (e) => {
       e.preventDefault();
-
-      if(validate)
-      {
-        fetch("http://localhost:3000/user/?email=" + email).then((res) => {
-          return res.json();
-        }).then((resp) => {
-          if(Object.keys(resp).length === 0) {
-            toast.error('Please Enter a Valid Email');
-          } else {
-            if (resp[0].password === password) {
-                usenavigate('/TestHome')
-            } else {
-              console.log(resp[0].password)
-              toast.error('Please enter Valid Credentials')
-            }
-          }
-        })
+      try {
+        if(validate(e)) {
+          /*Start of harmoni test code*/
+          let loginData = {email, password};
+          const response = await axios.post("http://localhost:8000/login", loginData );
+          console.log(response.data.message);
+          usenavigate('./TestHome');
+          toast.success('Login successful');
+        }
+      } catch(error) {
+        if(error.response){
+          console.error('Login error:', error.response.data.message);
+          toast.error(error.response.data.message);
+        }
+        else{
+          console.error('Server Error:', error.message);
+          toast.error(error.response.data.message);
+        }
       }
-    }
 
-      const validate = (e) => {
-        let result  = true;
+      // fetch("http://localhost:3000/user/?email=" + email).then((res) => {
+      //   return res.json();
+      // }).then((resp) => {
+      //   if(Object.keys(resp).length === 0) {
+      //     toast.error('Please Enter a Valid Email');
+      //   } else {
+      //     if (resp[0].password === password) {
+      //         usenavigate('/TestHome')
+      //     } else {
+      //       console.log(resp[0].password)
+      //       toast.error('Please enter Valid Credentials')
+      //     }
+      //   }
+      // })
+    }
+    
+    const validate = (e) => {
+      e.preventDefault();
+      let result  = true;
         return result;
+
     }
 
     return(

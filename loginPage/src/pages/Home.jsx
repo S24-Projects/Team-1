@@ -1,5 +1,4 @@
 import Logo from '../components/Logo'
-import React from 'react'
 
 function Home() {
   return (

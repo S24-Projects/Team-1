@@ -3,9 +3,26 @@ import { useState } from "react"
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
+import GoogleButton from './GoogleComponent'
+import { useEffect } from "react";
+import { gapi } from "gapi-script";
+
+
 function Login(){
+  const clientID = "262889882503-oacf0knn91ga7u4lmnoau4g0aege32ek.apps.googleusercontent.com"//google sign in clientID
+
     const [email,emailUpdate] = useState('');
     const [password,passwordUpdate] = useState('');
+
+    useEffect(() => {
+      function start() {
+        gapi.client.init({
+          clientId: clientID,
+          scope: ""
+        })
+      }
+      gapi.load('client:auth2', start)
+    })
 
     const usenavigate = useNavigate();
 
@@ -95,9 +112,13 @@ function Login(){
               >
               Continue
             </button>
+            {/* PUT GOOGLE BUTTON HERE*/}
+            <div className="App">
+            <GoogleButton/>
+            </div>
           </div>
             <p className="justify-center flex mb-1 font-semibold whitespace-pre">
-                Don't have an account ?<span className="">  <Link to = "pageSignup" className="text-teal-400 hover:underline">Sign up</Link> </span>
+                Dont have an account ?<span className="">  <Link to = "pageSignup" className="text-teal-400 hover:underline">Sign up</Link> </span>
             </p>
             <p className="justify-center flex mb-1 font-semibold whitespace-pre">
                 <span className="">  <a href = "" className="text-teal-400 hover:underline">Forgot you Password?</a> </span>
@@ -114,4 +135,4 @@ export default Login
 //                           hover:text-xl focus:outline-red-500
 
 
-//Object.keys(res).length === 0
+//Object.keys(res).length === 0</p>

@@ -48,6 +48,11 @@ function Login(){
         }
       }
 
+      const googleLogin = async (e) => {
+        e.preventDefault();
+        
+      }
+
       // fetch("http://localhost:3000/user/?email=" + email).then((res) => {
       //   return res.json();
       // }).then((resp) => {
@@ -113,10 +118,10 @@ function Login(){
               Continue
             </button>
             {/* PUT GOOGLE BUTTON HERE*/}
-            <div className="App">
+          </div>
+            <div className="justify-center flex m-4">
             <GoogleButton/>
             </div>
-          </div>
             <p className="justify-center flex mb-1 font-semibold whitespace-pre">
                 Dont have an account ?<span className="">  <Link to = "pageSignup" className="text-teal-400 hover:underline">Sign up</Link> </span>
             </p>

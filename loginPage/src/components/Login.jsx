@@ -4,25 +4,15 @@ import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 import GoogleButton from './GoogleComponent'
-import { useEffect } from "react";
-import { gapi } from "gapi-script";
+
 
 
 function Login(){
-  const clientID = "262889882503-oacf0knn91ga7u4lmnoau4g0aege32ek.apps.googleusercontent.com"//google sign in clientID
 
     const [email,emailUpdate] = useState('');
     const [password,passwordUpdate] = useState('');
 
-    useEffect(() => {
-      function start() {
-        gapi.client.init({
-          clientId: clientID,
-          scope: ""
-        })
-      }
-      gapi.load('client:auth2', start)
-    })
+
 
     const usenavigate = useNavigate();
 
@@ -48,25 +38,8 @@ function Login(){
         }
       }
 
-      const googleLogin = async (e) => {
-        e.preventDefault();
-        
-      }
+      
 
-      // fetch("http://localhost:3000/user/?email=" + email).then((res) => {
-      //   return res.json();
-      // }).then((resp) => {
-      //   if(Object.keys(resp).length === 0) {
-      //     toast.error('Please Enter a Valid Email');
-      //   } else {
-      //     if (resp[0].password === password) {
-      //         usenavigate('/TestHome')
-      //     } else {
-      //       console.log(resp[0].password)
-      //       toast.error('Please enter Valid Credentials')
-      //     }
-      //   }
-      // })
     }
     
     const validate = (e) => {
@@ -74,6 +47,19 @@ function Login(){
       let result  = true;
         return result;
 
+    }
+
+    const googleLogin = async (e) => {
+      e.preventDefault();
+
+      try {
+        const googleResponse = await axios.get("http://localhost:8000/auth/google");
+        console.log(googleResponse.data);
+        usenavigate('./TestHome');
+      }catch(error){
+
+      }
+      
     }
 
     return(
@@ -117,8 +103,8 @@ function Login(){
               >
               Continue
             </button>
-            {/* PUT GOOGLE BUTTON HERE*/}
           </div>
+            {/* PUT GOOGLE BUTTON HERE*/}
             <div className="justify-center flex m-4">
             <GoogleButton/>
             </div>

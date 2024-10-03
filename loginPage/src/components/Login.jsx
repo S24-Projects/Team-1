@@ -57,7 +57,7 @@ function Login(){
         console.log(googleResponse.data);
         usenavigate('./TestHome');
       }catch(error){
-
+        console.log("Error during google login: " + error);
       }
       
     }

@@ -49,18 +49,18 @@ function Login(){
 
     }
 
-    const googleLogin = async (e) => {
-      e.preventDefault();
+    // const googleLogin = async (e) => {
+    //   e.preventDefault();
 
-      try {
-        const googleResponse = await axios.get("http://localhost:8000/auth/google");
-        console.log(googleResponse.data);
-        usenavigate('./TestHome');
-      }catch(error){
-        console.log("Error during google login: " + error);
-      }
+    //   try {
+    //     const googleResponse = await axios.get("http://localhost:8000/auth/google");
+    //     console.log(googleResponse.data);
+    //     usenavigate('./TestHome');
+    //   }catch(error){
+    //     console.log("Error during google login: " + error);
+    //   }
       
-    }
+    // }
 
     return(
         <div className="max-w-md w-full">
